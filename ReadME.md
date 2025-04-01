@@ -1,4 +1,4 @@
-# Web Scraping Data ETL Pipeline with Snowpipe and Snowflake Integration
+# SnowScraper: Web Scraping Data ETL Pipeline with Snowpipe
 
 ## Purpose
 This project sets up a serverless ETL pipeline for web scraping data, storing it in an S3 bucket, processing the data using AWS Glue, and loading it into Snowflake using Snowpipe. The objective is to create a fully automated, scalable, and efficient data pipeline to process and load web-scraped data into Snowflake for analytics and reporting.
