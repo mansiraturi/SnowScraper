@@ -64,12 +64,12 @@ The pipeline follows these steps:
 - **Create Stage**: Create an external stage pointing to your S3 bucket where the processed files (Parquet) are stored
 
 After the above steps are set up, whenever a new file is uploaded to the S3 bucket, the Lambda function will be triggered, which will move the file to the `curated/` folder and trigger the Glue job. The Glue job will process the data and write it to the `publish/` folder in S3. Snowpipe will automatically load the data from the `publish/` folder into Snowflake.
-![Lambda Diagram](assets\glue-publish.png)
+![Lambda Diagram](assets/glue-publish.png)
 
-![Snowflake Dashboard](assets\snowflake-output.png) 
+![Snowflake Dashboard](assets/snowflake-output.png) 
 
 The subscriber gets notified about the lambda execution status
-![Snowflake Dashboard](assets\aws-sns-notif.png) 
+![Snowflake Dashboard](assets/aws-sns-notif.png) 
 
 ## Conclusion
 This pipeline automates the process of extracting, transforming, and loading (ETL) data from a web scraping job into Snowflake for further analysis. The combination of AWS Lambda, AWS Glue, Snowpipe, and Snowflake enables a fully managed, scalable, and serverless ETL pipeline.
