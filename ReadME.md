@@ -36,7 +36,7 @@ The pipeline follows these steps:
 - The Lambda function is triggered when a new file is uploaded to the S3 bucket
 - The function moves the file from `raw/` to `curated/` folder in S3 and triggers an AWS Glue job to process the file
 - **Permissions**: Ensure that the Lambda function has permissions to read from the raw S3 bucket and write to the curated folder in the same S3 bucket. Also, Lambda needs permission to trigger the Glue job
- ![Lambda Diagram](assets\lambda_diagram.png)
+ ![Lambda Diagram](assets/lambda_diagram.png)
 
 #### Set Up Event Trigger:
 - Create an S3 event notification to trigger the Lambda function when a new file is uploaded
@@ -46,7 +46,7 @@ The pipeline follows these steps:
 - Set up a Glue job that reads the CSV files from the `curated/` folder in S3, processes them (e.g., convert CSV to Parquet format), and writes the transformed data back to S3 in the `publish/` folder
 - The Glue job script (`csvtoparquet.py`) processes the data
 - **Permissions**: Ensure that the Glue job has read and write permissions to the appropriate S3 buckets (curated and publish)
-![Lambda Diagram](assets\glue_runs.png)
+![Lambda Diagram](assets/glue_runs.png)
 
 
 
